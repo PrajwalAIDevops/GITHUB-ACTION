@@ -1,0 +1,11 @@
+name: github-action CICD 
+on:
+    push:
+        branches:
+            - main
+jobs:
+    check-out:
+        runs-on: ubuntu:lates
+        steps:
+          - name: checkout the code
+            run : echo "hello"
