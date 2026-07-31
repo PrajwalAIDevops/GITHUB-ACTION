@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ app_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="card">
+
+    <h1>{{ app_name }}</h1>
+
+    <h2>🚀 Flask Application</h2>
+
+    <div class="info">
+        <p><strong>Environment</strong></p>
+        <span>{{ app_env }}</span>
+    </div>
+
+    <div class="info">
+        <p><strong>Version</strong></p>
+        <span>{{ version }}</span>
+    </div>
+
+    <div class="info">
+        <p><strong>Pod / Container</strong></p>
+        <span>{{ hostname }}</span>
+    </div>
+
+    <div class="buttons">
+        <a href="/health">Health Check</a>
+        <a href="/version">Version API</a>
+    </div>
+
+</div>
+
+</body>
+</html>
