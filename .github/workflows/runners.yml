@@ -12,7 +12,7 @@ jobs:
             - name: checkout the code
               uses: actions/checkout@v4
             - name: scan the code
-              run: scaining the code
+              run: echo "scaining the code"
             - name: deploy if dev 
               if : github.ref == 'refs/heads/main'
               run: echo "deploy in dev env "
