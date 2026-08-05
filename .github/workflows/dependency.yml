@@ -62,27 +62,16 @@ jobs:
 
       - name: Run Container
         run: |
-<<<<<<< HEAD
           docker run -d \
             --name flask-app \
             -p 8080:8080 \
             $APP:${{ needs.build-and-push.outputs.image_tag }}
-=======
-          echo "APP=$APP"
-          echo "HOST_POST=${{ vars.HOST_POST }}"
-          echo "CONT_POST=${{ vars.CONT_POST }}"
-          echo "IMAGE=${{ needs.build.outputs.image_tag }}"
->>>>>>> b6f3124724d8c8a6f86835d6de5297924d21f41d
 
       - name: Check Running Container
         run: |
-<<<<<<< HEAD
           docker ps
 
       - name: Test Application
         run: |
-          sleep 30
+          sleep 10
           curl http://localhost:8080
-=======
-          echo "Deployment Successful"
->>>>>>> b6f3124724d8c8a6f86835d6de5297924d21f41d
