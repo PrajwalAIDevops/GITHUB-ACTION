@@ -86,7 +86,7 @@ jobs:
         run: |
           docker run -d \
             --name flask-app \
-            -p ${{ vars.HOST_PORT }}:${{ vars.CONTAINER_PORT }} \
+            -p ${{ vars.HOST_PORT }}:${{ vars.CONT_POST }} \
             $APP:${{ needs.build.outputs.image_tag }}
 
       - name: Success
