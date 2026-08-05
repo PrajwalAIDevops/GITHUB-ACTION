@@ -1,0 +1,19 @@
+name: setup-actions
+on:
+    push:
+        branches:
+            - dev
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout the code 
+              uses: actions/checkout@v4
+            - name: get the python
+              uses: actions/setup-python@v5
+              with:
+                python-version: 3.12
+            - name: verify the python version
+              run: python --version
+            - name: install the requirements
+              run: pip install -r requrements.txt
