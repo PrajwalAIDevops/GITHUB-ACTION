@@ -1,0 +1,16 @@
+name: if_or
+on:
+    push:
+        branches:
+            - main
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: check the branch
+              run : echo "${{ github.ref_name }}"
+            - name: check the event
+              run: echo "${{ github.event_name}}"
+            - name: check if ref is main and event is push 
+              if: github.ref == 'refs/heads/main' || github.event_name == 'push'
+              run: echo " deploying ....main and push event "
