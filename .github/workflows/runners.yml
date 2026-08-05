@@ -14,7 +14,7 @@ jobs:
             - name: scan the code
               run: echo "scaining the code"
             - name: deploy if dev 
-              if : github.ref == 'refs/heads/main'
+              if : github.ref == 'refs/heads/dev'
               run: echo "deploy in dev env "
             - name: end of pipline
               run: echo "end of pipline ....."
