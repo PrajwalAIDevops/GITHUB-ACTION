@@ -41,7 +41,7 @@ jobs:
             - name: build imag
               id: build
               run: |
-                docker build -t $App:$tag .
+                docker build -t $APP:$TAG .
                 echo "image_tag=$TAG">> $GITHUB_OUTPUT
             - name: push the docker image
               run: docker push $APP:$TAG
@@ -65,7 +65,7 @@ jobs:
         - name: deploy
           run: |
             docker run -d \
-            --name flask-app \
+            --name flask-APP \
             -p ${{ vars.HOST_PORT }}:${{ vars.CONTAINER_PORT }} \
             $APP:${{ needs.build.outputs.image_tag }}
 
