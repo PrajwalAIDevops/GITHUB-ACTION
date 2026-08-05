@@ -85,9 +85,9 @@ jobs:
       - name: Run Container
         run: |
           docker run -d \
-            --name flask-app \
-            -p ${{ vars.HOST_POST }}:${{ vars.CONT_POST }} \
-            $APP:${{ needs.build.outputs.image_tag }}
+          --name flask-app \
+          -p 8080:8080 \
+          $APP:${{ needs.build.outputs.image_tag }}
 
       - name: Success
         run: |
