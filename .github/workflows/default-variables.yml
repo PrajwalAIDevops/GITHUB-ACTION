@@ -5,17 +5,17 @@ on:
             - main
 jobs:
     build:
-        runs-on: ubuntu-latest:
-            steps:
-                - name: check the commit code
-                  run: echo "${{ github.sha}}"
-                - name: check the tag
-                  run: echo "${{ github.ref_name}}"
-                - name: check the event_name
-                  run: echo "${{ github.event_name}}"
-                - name: check the workflow
-                  run: echo "${{ github.workflow}}"
-                - name: check the job
-                  run: echo "${{ github.job}}"
-                - name: check the reposistory
-                  run: echo "${{ github.repository}}"
+        runs-on: ubuntu-latest
+        steps:
+            - name: check the commit code
+              run: echo "${{ github.sha}}"
+            - name: check the tag
+              run: echo "${{ github.ref_name}}"
+            - name: check the event_name
+              run: echo "${{ github.event_name}}"
+            - name: check the workflow
+              run: echo "${{ github.workflow}}"
+            - name: check the job
+              run: echo "${{ github.job}}"
+            - name: check the reposistory         
+              run: echo "${{ github.repository}}"
