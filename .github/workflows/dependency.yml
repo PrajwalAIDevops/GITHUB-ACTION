@@ -84,10 +84,10 @@ jobs:
 
       - name: Run Container
         run: |
-          docker run -d \
-          --name flask-app \
-          -p 8080:8080 \
-          $APP:${{ needs.build.outputs.image_tag }}
+          echo "APP=$APP"
+          echo "HOST_POST=${{ vars.HOST_POST }}"
+          echo "CONT_POST=${{ vars.CONT_POST }}"
+          echo "IMAGE=${{ needs.build.outputs.image_tag }}"
 
       - name: Success
         run: |
