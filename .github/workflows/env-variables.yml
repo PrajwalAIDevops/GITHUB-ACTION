@@ -1,0 +1,16 @@
+name: env-variables
+on:
+    push: 
+        branches:
+            - main
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        env:
+            APP_NAME: app-1
+            ENVIRONMENT: dev
+        steps:
+            - name: print the app name
+              run: echo $APP_NAME
+            - name: print env
+              run: echo $ENVIRONMENT
